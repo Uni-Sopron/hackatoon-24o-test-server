@@ -1,0 +1,16 @@
+services:
+  server:
+    image: hegyhati/hackathon_2024_autumn_engine
+    restart: unless-stopped
+    ports:
+      - 8000:5000
+    volumes:
+      - ./test_maps:/app/test_maps
+      - ./conf.py:/app/conf.py
+
+  viewer:
+    image: hegyhati/hackathon_2024_autumn_viewer
+    ports:
+     - 80:80
+    depends_on:
+      - server
