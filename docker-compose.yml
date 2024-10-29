@@ -12,5 +12,7 @@ services:
     image: hegyhati/hackathon_2024_autumn_viewer
     ports:
      - 80:80
+    environment:
+      - VITE_BACKEND_URL=localhost:8000
     depends_on:
       - server
