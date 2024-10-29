@@ -15,6 +15,14 @@ pip install -r requirements.txt
 
 ### Docker initialization
 
+#### Setting up the environment
+
+```bash
+cp .env.sample .env
+```
+
+Replace the correct ip address in the `.env` file.
+
 #### Start
 
 ```bash
