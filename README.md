@@ -15,6 +15,10 @@ pip install -r requirements.txt
 
 ### Docker initialization
 
+#### Setting up engine ip address (optional)
+
+Replace `VITE_BACKEND_URL` value in the `docker-compose.yml` file with the ip address of the engine.
+
 #### Start
 
 ```bash
