@@ -1,6 +1,6 @@
 services:
   server:
-    image: hegyhati/hackathon_2024_autumn_engine
+    image: hegyhati/hackathon_2024_autumn_engine:simulation
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
