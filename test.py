@@ -29,7 +29,7 @@ def reset_game():
         "level": "test_maps/small_2p.json",
         "turn_duration": 1.75,
         "robot_request_timeout": 0.3,
-        # "secret": "secret"
+        "secret": "mindmeghalunk"
     }
     requests.post(reset_url, json=conf)
 
@@ -37,11 +37,13 @@ def reset_game():
 while True:
     state = requests.get("http://localhost:8000/state").json()
     if state["state"] == "Game has ended.":
+        print(state["scores"])
         reset_game()
         sleep(5)
     elif state["state"] == "Waiting for teams...":
         secret1 = register_player("teszt", "host.docker.internal:5555")
         secret2 = register_player("teszt2", "host.docker.internal:5555")
+        print(secret1, secret2)
     else:
         deploy_player("teszt", secret1, 0, 2, 3)
         deploy_player("teszt2", secret2, 0, 17, 3)
